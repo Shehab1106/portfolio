@@ -24,7 +24,7 @@ export const about = {
   paragraphs: [
     "I'm a software engineer who works where accuracy is non-negotiable and the edge cases are the real work. As **CTO at ClearSplit**, I'm building a double-entry trust-accounting platform for short-term-rental property managers from the ground up: the ledger, multi-PMS reconciliation, tax and owner statements, and the security and multi-tenancy that fintech demands.",
     "Before that, at **SellAbroad**, I built core pieces of an event-driven commerce platform powering checkout and payments across 150+ countries, including a multi-provider payment orchestration engine and a fault-tolerant, queue-based processing system with retries, idempotency, and database-level locking.",
-    "I care about systems I understand end to end over sheer volume. The two case studies here are the clearest window into how I think: not the happy path, but what keeps the numbers right when everything around them is changing.",
+    "I care about systems I understand end to end over sheer volume. The two projects here are the clearest window into how I think: not the happy path, but what keeps the numbers right when everything around them is changing.",
   ],
   stack: [
     { k: "Languages", v: "TypeScript, Java, Python" },
@@ -71,15 +71,16 @@ export const projects: Project[] = [
   {
     slug: "orchestrant",
     name: "orchestrant",
-    tagline: "Payment orchestration engine",
+    tagline: "Payment routing and orchestration engine",
     status: "Open source",
     summary:
-      "Routes a card charge across multiple providers, cascades to a fallback when one soft-declines, handles 3-D Secure, and stops cleanly on a hard decline. The core engine is pure TypeScript with no framework or database dependency; delivery and storage plug in behind interfaces.",
+      "A cart context resolves which payment methods a checkout offers and how each one routes: per-method discovery unions methods across providers, weighted rules pick a primary and a fallback chain, and charging a method cascades it through soft declines, a 3-D Secure pause, and a clean stop on a hard decline. The core engine is pure TypeScript; an interactive console and an HTTP API are adapters over it.",
     hardPart:
-      "The interesting cases are all failure cases. Every outcome is an explicit status, and only savable ones cascade, so a retried request never double-charges and a 3-D Secure challenge never fires twice for one payment.",
-    hardEmphasis: "all failure cases",
+      "Discovery and a live charge run the same resolver, so the methods a preview offers can never drift from what the checkout actually charges, the classic bug in a routing layer. And only savable failures cascade, so a retried request never double-charges.",
+    hardEmphasis: "the same resolver",
     stack: ["TypeScript", "Next.js", "Postgres", "Ports & adapters"],
     links: [
+      { label: "Live demo", href: "https://orchestrant-shehab14.vercel.app", kind: "live" },
       { label: "Source on GitHub", href: "https://github.com/Shehab1106/orchestrant", kind: "repo" },
     ],
     figure: "cascade",
