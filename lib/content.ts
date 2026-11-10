@@ -54,16 +54,16 @@ export const projects: Project[] = [
   {
     slug: "trust-ledger",
     name: "trust-ledger",
-    tagline: "Trust-accounting ledger architecture",
-    status: "Case study",
+    tagline: "Trust-accounting ledger: architecture + reference implementation",
+    status: "Open source",
     summary:
-      "A double-entry trust ledger built in production for a property-management platform holding guest and owner funds. One write boundary, append-only journals enforced at the database layer, corrections by reversal, and statements pinned to the exact ledger state they read.",
+      "A double-entry trust ledger built in production for a property-management platform holding guest and owner funds. One write boundary, append-only journals enforced at the database layer, corrections by reversal, and statements pinned to the exact ledger state they read. A clean-room TypeScript reference implementation and a passing test suite ship alongside the write-up.",
     hardPart:
       "The ledger is permanent; everything around it is disposable. The sharpest consequence: no foreign keys on the journal lines, because a disposable table must never be able to delete or orphan a financial record. The journal line doesn't depend on the booking, it remembers it.",
     hardEmphasis: "no foreign keys on the journal lines",
-    stack: ["Architecture", "Postgres", "Double-entry", "Trust accounting"],
+    stack: ["TypeScript", "Postgres", "Double-entry", "Tested"],
     links: [
-      { label: "Read the case study", href: "https://github.com/Shehab1106/trust-ledger", kind: "case" },
+      { label: "Code + write-up", href: "https://github.com/Shehab1106/trust-ledger", kind: "case" },
     ],
     figure: "ledger-chain",
   },
