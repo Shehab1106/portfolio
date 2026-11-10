@@ -64,7 +64,7 @@ export const projects: Project[] = [
     stack: ["TypeScript", "Postgres", "Double-entry", "Tested"],
     links: [
       { label: "Live demo", href: "https://trust-ledger-shehab14.vercel.app", kind: "live" },
-      { label: "Code + write-up", href: "https://github.com/Shehab1106/trust-ledger", kind: "case" },
+      { label: "Code + write-up", href: "https://github.com/Shehab1106/trust-ledger", kind: "repo" },
     ],
     figure: "ledger-chain",
   },
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     stack: ["TypeScript", "Next.js", "Postgres", "Ports & adapters"],
     links: [
       { label: "Live demo", href: "https://orchestrant-shehab14.vercel.app", kind: "live" },
-      { label: "Source on GitHub", href: "https://github.com/Shehab1106/orchestrant", kind: "repo" },
+      { label: "Code + write-up", href: "https://github.com/Shehab1106/orchestrant", kind: "repo" },
     ],
     figure: "cascade",
   },
