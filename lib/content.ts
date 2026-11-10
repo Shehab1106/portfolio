@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     slug: "trust-ledger",
     name: "trust-ledger",
-    tagline: "Trust-accounting ledger: architecture + reference implementation",
+    tagline: "Trust-accounting ledger architecture",
     status: "Open source",
     summary:
       "A double-entry trust ledger built in production for a property-management platform holding guest and owner funds. One write boundary, append-only journals enforced at the database layer, corrections by reversal, and statements pinned to the exact ledger state they read. A clean-room TypeScript reference implementation and a passing test suite ship alongside the write-up.",
